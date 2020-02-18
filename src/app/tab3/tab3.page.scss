@@ -1,0 +1,63 @@
+ion-list ion-icon {
+    vertical-align: bottom;
+}
+::ng-deep ion-header ion-title {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: #222;
+    margin-left: 0;
+    pointer-events: none;
+}
+.logout{
+	color: #F44336
+}
+
+.profile .avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+    overflow: hidden;
+    border: solid 2px #0537b2;
+    display: inline-block;
+}
+
+.profile .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50px;
+    border: solid 2px #fff;
+}
+
+.sayhi {
+    width: calc(100% - 150px);
+    display: inline-block;
+    padding-left: 15px;
+    vertical-align: top;
+    padding-top: 20px;
+}
+
+.sayhi h2 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.sayhi span {
+    font-size: 14px;
+    color: #888;
+}
+
+.profile span.edit {
+    float: right;
+    margin-top: 40px;
+    font-size: 8px;
+    background: #0adb56;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-right: 10px;
+}

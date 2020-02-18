@@ -1,0 +1,74 @@
+::ng-deep ion-label {
+    font-size: 11px;
+}
+::ng-deep ion-header ion-title {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: #222;
+    margin-left: -48px;
+    pointer-events: none;
+}
+
+ion-header{
+	::ng-deep span.button-inner {
+	    color: #0537b2;
+	}
+}
+::ng-deep ion-header:after {
+    display: none;
+}
+ion-list > ion-item {
+    --background: #f1f3ff;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+ion-list > ion-item ion-label {
+    font-size: 14px!important;
+    font-weight: 300!important;
+    color: #0537b2!important;
+}
+ion-content  button {
+    margin: 20px 0;
+    width: 100%;
+    line-height: 45px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 0 #0adb56;
+    background: #0adb56;
+}
+.avatar {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    border-radius: 50px;
+    overflow: hidden;
+    position: relative;
+    border: solid 3px #0537b2;
+}
+
+.avatar img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border: solid 2px #fff;
+    border-radius: 50px;
+}
+
+.overlay {
+    position: absolute;
+    z-index: 9;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.3);
+    color: #fff;
+    text-align: center;
+    font-size: 24px;
+    line-height: 100px;
+}
+
+.overlay ion-icon {}

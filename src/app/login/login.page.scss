@@ -1,0 +1,62 @@
+ion-content{
+	--ion-background-color: #0537b2;
+}
+.logo {
+    text-align: center;
+    margin-top: 20vh;
+    margin-bottom: 30px;
+}
+
+.loginbox {
+    width: 80%;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.form input {
+    line-height: 50px;
+    padding: 0 15px;
+    border: none;
+    width: 100%;
+}
+
+.loginbox button {
+    width: 100%;
+    line-height: 50px;
+    font-size: 16px;
+    color: #fff;
+    background: #0adb56;
+}
+
+.loginsocial {
+    width: 80%;
+    margin: 20px auto;
+    display: block;
+    padding: 10px;
+    border: solid 1px #fff;
+    border-radius: 20px;
+    line-height: 30px;
+}
+
+.loginsocial img {
+    padding: 0 10px;
+    vertical-align: middle;
+}
+
+.loginsocial span {
+    width: 86%;
+    float: right;
+    text-align: center;
+    border-left: solid 1px #fff;
+    color: #fff;
+}
+
+p {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    color: #fff;
+}

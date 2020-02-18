@@ -1,0 +1,149 @@
+<ion-header>
+  <ion-toolbar>
+    <img src="assets/logo.png">
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <div class="profile-header" *ngIf="isLogin">
+      <div class="left">
+        <div class="avatar">
+          <img src="{{ user.avatar }}"  onerror="this.src='https://img.pngio.com/no-avatar-png-transparent-png-download-for-free-3856300-trzcacak-png-avatar-920_954.png';">
+        </div>
+        <div class="sayhi">
+          <span>Hi,</span>
+          <h2>{{user.nama.split(' ')[0]}}</h2>
+        </div>
+      </div>
+      <div class="right">
+        <span>Saldo</span>
+        <h1><span>Rp.</span>{{user.saldo | currency:' ':'symbol':'1.0-0'}}</h1>
+      </div>
+    </div>
+
+    <div class="saldo-bar">
+      <div class="saldo" (click)="pay()">
+        <img src="assets/pay.svg">
+        <span>Pay</span>
+      </div>
+      <div class="saldo" (click)="topup()">
+        <img src="assets/topup.svg">
+        <span>Topup</span>
+      </div>
+      <div class="saldo" (click)="history()">
+        <img src="assets/history.svg">
+        <span>History</span>
+      </div>
+    </div>
+
+    <ion-list lines="none" class="status" *ngIf="isLogin">
+      <ion-list-header>
+        <ion-label>status parkir</ion-label>
+      </ion-list-header>
+      <ion-item *ngIf="!parkir && loading">
+        <ion-thumbnail slot="start">
+          <ion-skeleton-text animated></ion-skeleton-text>
+        </ion-thumbnail>
+        <ion-label>
+          <div class="meta"><ion-skeleton-text animated  style="width: 50%"></ion-skeleton-text></div>
+          <h2><ion-skeleton-text animated  style="width: 80%"></ion-skeleton-text></h2>
+          <p><ion-skeleton-text animated style="width: 50%"></ion-skeleton-text></p>
+        </ion-label>
+      </ion-item>
+      <ion-item *ngFor="let item of parkir">
+        <ion-thumbnail slot="start">
+          <img src="assets/maps.png">
+        </ion-thumbnail>
+        <ion-label>
+          <div class="meta"><span>{{item.kendaraan.jenis}}</span> <div class="dotted"></div> Parkir</div>
+          <h2>{{item.kendaraan.merk}} {{item.kendaraan.merk}}</h2>
+          <p>{{item.kendaraan.plat}} <span><div class="dotted"></div>{{item.time}}</span></p>
+        </ion-label>
+        <span slot="end" (click)="out(item)">Keluar</span>
+      </ion-item>
+      <ion-item *ngIf="!parkir || parkir.length < 1" class="empty">
+        <ion-label>
+          <h2>Anda belum memarkir kendaraan anda</h2>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+
+    <ion-list lines="none" class="mitra">
+      <ion-list-header>
+        <ion-label>mitra terdekat</ion-label>
+      </ion-list-header>
+      <div class="mitra-box" *ngIf="!mitra">
+        <div class="mitra-item" >
+          <img src="assets/pin.svg" class="pin">
+          <div class="mitra-avatar">
+            <ion-skeleton-text animated></ion-skeleton-text>
+          </div>
+          <p><ion-skeleton-text animated></ion-skeleton-text></p>
+        </div>
+        <div class="mitra-item">
+          <img src="assets/pin.svg" class="pin">
+          <div class="mitra-avatar">
+            <ion-skeleton-text animated></ion-skeleton-text>
+          </div>
+          <p><ion-skeleton-text animated></ion-skeleton-text></p>
+        </div>
+        <div class="mitra-item">
+          <img src="assets/pin.svg" class="pin">
+          <div class="mitra-avatar">
+            <ion-skeleton-text animated></ion-skeleton-text>
+          </div>
+          <p><ion-skeleton-text animated></ion-skeleton-text></p>
+        </div>
+        <div class="mitra-item">
+          <img src="assets/pin.svg" class="pin">
+          <div class="mitra-avatar">
+            <ion-skeleton-text animated></ion-skeleton-text>
+          </div>
+          <p><ion-skeleton-text animated></ion-skeleton-text></p>
+        </div>
+        <div class="mitra-item">
+          <img src="assets/pin.svg" class="pin">
+          <div class="mitra-avatar">
+            <ion-skeleton-text animated></ion-skeleton-text>
+          </div>
+          <p><ion-skeleton-text animated></ion-skeleton-text></p>
+        </div>
+      </div>
+      <div class="mitra-box">
+        <div class="mitra-item"  *ngFor="let item of mitra" (click)="gomitra(item)">
+          <img src="assets/pin.svg" class="pin">
+          <div class="mitra-avatar">
+            <img src="{{item.avatar.replace('#','')}}">
+          </div>
+          <p>{{item.nama}}</p>
+        </div>
+      </div>
+    </ion-list>
+
+    <ion-list lines="none" class="info">
+      <ion-list-header>
+        <ion-label>info terkini</ion-label>
+      </ion-list-header>
+      <div class="car-box">
+
+        <ion-card *ngIf="!post">
+          <ion-skeleton-text animated style="height: 150px"></ion-skeleton-text>
+          <ion-card-header>
+            <ion-card-subtitle><ion-skeleton-text animated></ion-skeleton-text></ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+        <ion-card *ngIf="!post">
+          <ion-skeleton-text animated style="height: 150px"></ion-skeleton-text>
+          <ion-card-header>
+            <ion-card-subtitle><ion-skeleton-text animated></ion-skeleton-text></ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+        <ion-card *ngFor="let item of post" (click)="single(item)">
+          <img src="{{item.gambar.replace('#','')}}" />
+          <ion-card-header>
+            <ion-card-subtitle>{{item.judul}}</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </div>
+    </ion-list>
+</ion-content>

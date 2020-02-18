@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+  	<ion-buttons slot="start">
+      <ion-back-button  defaultHref="/tabs/tab1"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Topup</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<div class="top-header">
+		<img src="assets/topup.svg">
+		<div class="top-inner">
+			<span>Saldo</span>
+			 <h1><span>Rp.</span>{{user.saldo | currency:' ':'symbol':'1.0-0'}}</h1>
+		</div>
+	</div>
+
+	<div class="form">
+		<span>Masukkan Nominal</span>
+		<div class="form-control">
+			<div class="rp">Rp</div>
+			<input type="number" name="nominal"  [(ngModel)]="nominal">
+		</div>
+			<small>* Minimal Rp 20.000</small>
+	</div>
+</ion-content>
+<ion-footer>
+	<button (click)="submit()"><ion-spinner name="crescent" *ngIf="loading"></ion-spinner><span *ngIf="!loading">Kirim</span></button>
+</ion-footer>

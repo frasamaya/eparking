@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-toolbar>
+  	<ion-buttons slot="start">
+      <ion-back-button  defaultHref="/tabs/tab1"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<img *ngIf="data.gambar" src="{{data.gambar.replace('#','')}}">
+	<h2>{{data.judul}}</h2>
+	<div class="content" [innerHtml]="data.konten"></div>
+</ion-content>

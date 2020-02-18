@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+  	<ion-buttons slot="start">
+      <ion-back-button  defaultHref="/tabs/tab1"></ion-back-button>
+    </ion-buttons>
+    <ion-title>History Saldo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<ion-list>
+	  <!-- <ion-item-divider>
+	    <ion-label>
+	      20 Okt 2019
+	    </ion-label>
+	  </ion-item-divider> -->
+
+	  <ion-item *ngFor="let item of data">
+	  	<ion-label *ngIf="!item.parkir">
+	  		<h3>Topup</h3>
+            <p>Transfer masuk</p>
+	  	</ion-label>
+	  	<ion-label *ngIf="item.parkir">
+	  		<h3>Parkir</h3>
+            <p>Transfer keluar</p>
+	  	</ion-label>
+	  	<span slot="end"  *ngIf="!item.parkir">+{{item.nominal | currency:'Rp ':'symbol':'1.0-0'}}</span>
+	  	<span slot="end"  *ngIf="item.parkir" class="outgoing">{{item.nominal | currency:'Rp ':'symbol':'1.0-0'}}</span>
+	  </ion-item>
+	</ion-list>
+</ion-content>

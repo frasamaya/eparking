@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+  	<ion-buttons slot="start">
+      <ion-back-button  defaultHref="/tabs/tab1"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{data.nama}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen>
+	<img src="{{data.avatar.replace('#','')}}">
+	<div class="detail-box">
+		<div class="detail">
+			<ion-thumbnail slot="start">
+	          <img src="assets/pin.svg">
+	        </ion-thumbnail>
+	        <div class="label">
+	        	<span>Alamat</span>
+	        	<p>{{data.alamat}}</p>
+	        </div>
+		</div>
+		<div class="detail half">
+			<ion-thumbnail slot="start">
+	          <img src="assets/car.png">
+	        </ion-thumbnail>
+	        <div class="label">
+	        	<span>Kapasitar</span>
+	        	<p>20 Unit</p>
+	        </div>
+	        <div class="label">
+	        	<span>Tarif</span>
+	        	<p>Rp 5.000 / Flat</p>
+	        </div>
+		</div>
+		<div class="detail half">
+			<ion-thumbnail slot="start">
+	          <img src="assets/motor.png">
+	        </ion-thumbnail>
+	        <div class="label">
+	        	<span>Kapasitar</span>
+	        	<p>200 Unit</p>
+	        </div>
+	        <div class="label">
+	        	<span>Tarif</span>
+	        	<p>Rp 1.000 / Jam</p>
+	        </div>
+		</div>
+	</div>
+	<div class="direction">
+		 <img src="assets/maps.png">
+		 <button (click)="direction()">Direction</button>
+	</div>
+</ion-content>

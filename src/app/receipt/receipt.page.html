@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Parking Ticket</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+	<div class="tikcet">
+		<h3>{{data.mitra.nama}}</h3>
+		<p>{{data.mitra.alamat}}</p>
+		<div class="parking-title">Parking receipt</div>
+		<table>
+			<tr>
+				<td>Jenis</td>
+				<td>{{data.kendaraan.jenis}}</td>
+			</tr>
+			<tr>
+				<td>Merk</td>
+				<td>{{data.kendaraan.merk}}</td>
+			</tr>
+			<tr>
+				<td>Model</td>
+				<td>{{data.kendaraan.model}}</td>
+			</tr>
+			<tr>
+				<td>Tahun</td>
+				<td>{{data.kendaraan.tahun}}</td>
+			</tr>
+			<tr>
+				<td>Plat No.</td>
+				<td>{{data.kendaraan.plat}}</td>
+			</tr>
+			<tr>
+				<td>Masuk</td>
+				<td>{{data.masuk  | date:'d/M/yy, HH:mm:ss'}}</td>
+			</tr>
+			<tr>
+				<td>Keluar</td>
+				<td *ngIf="!data.keluar">{{ keluar | date:'d/M/yy, HH:mm:ss'}}</td>
+				<td *ngIf="data.keluar">{{ data.keluar | date:'d/M/yy, HH:mm:ss'}}</td>
+			</tr>
+
+			<tr class="end">
+				<td>Biaya</td>
+				<td *ngIf="data.tarif.jenis_parkir == 0">{{data.tarif.biaya  | currency:'Rp ':'symbol':'1.0-0'}}</td>
+				<td *ngIf="data.tarif.jenis_parkir == 1">{{data.tarif.biaya * data.selisih}}</td>
+			</tr>
+		</table>
+		<div class="footer">
+			Thank you and drive safely
+			<img src="assets/logo.png">
+		</div>
+	</div>
+	<button (click)="pay()" *ngIf="!data.keluar"><ion-spinner name="crescent" *ngIf="loading"></ion-spinner><span *ngIf="!loading">Bayar</span></button>
+</ion-content>

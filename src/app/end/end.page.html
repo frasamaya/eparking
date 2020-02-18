@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Transfer Topup</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+	<p>Silahkan transfer sesuai nominal di bawah. Jumlah transfer harus sesuai, tidak boleh dibulatkan</p>
+	<div class="nominal">
+		{{data.nominal | currency:'Rp ':'symbol':'1.0-0'}}
+	</div>
+	<p>Transfer ke rekening di bawah ini sebelum <strong>{{data.expired  | date:'d MMMM yyyy HH:mm'}}</strong></p>
+	<div class="rek">
+		<h2>{{data.bank.rekening}}</h2>
+		<p>{{data.bank.nama}}</p>
+	</div>
+
+	<button (click)="home()">Kembali ke Home</button>
+</ion-content>

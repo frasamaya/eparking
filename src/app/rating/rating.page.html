@@ -1,0 +1,14 @@
+<ion-content>
+	<h2>Congratulation</h2>
+	<p>Yuk berikan rating untuk mitra kami. Penilaian anda sangat berarti bagi kami.</p>
+	<ion-spinner name="crescent" *ngIf="loading"></ion-spinner>
+	<div class="avatar"  *ngIf="!loading">
+		<img src="{{data.mitra.avatar.replace('#','')}}">
+	</div>
+	<h3 *ngIf="!loading">{{data.mitra.nama}}</h3>
+	<div class="rate" *ngIf="!loading">
+		<bar-rating name="rating" [(ngModel)]="rating.rating" [max]="5" required></bar-rating>
+	</div>
+	<textarea *ngIf="!loading" placeholder="komentar" [(ngModel)]="rating.komentar"></textarea>
+	<button (click)="submit(rating)"><ion-spinner name="crescent" *ngIf="rateLoading"></ion-spinner><span *ngIf="!rateLoading">Kirim</span></button>
+</ion-content>

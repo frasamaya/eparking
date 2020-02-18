@@ -1,0 +1,41 @@
+::ng-deep ion-label {
+    font-size: 11px;
+}
+::ng-deep ion-header ion-title {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: #222;
+    pointer-events: none;
+}
+
+ion-header{
+	::ng-deep span.button-inner {
+	    color: #0537b2;
+	}
+}
+::ng-deep ion-header:after {
+    display: none;
+}
+ion-content  button {
+    margin: 20px 0;
+    width: 100%;
+    line-height: 45px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 0 #0adb56;
+    background: #0adb56;
+}
+ion-content {
+    text-align: center;
+}
+
+input {
+    border: none;
+    border-bottom: solid 2px #888;
+    line-height: 40px;
+    margin: 10px 0 20px;
+    text-align: center;
+}

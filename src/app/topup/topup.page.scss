@@ -1,0 +1,100 @@
+::ng-deep ion-label {
+    font-size: 11px;
+}
+::ng-deep ion-header ion-title {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    margin-left: -48px;
+    pointer-events: none;
+}
+
+ion-header{
+	::ng-deep span.button-inner {
+	    color: #fff;
+	}
+}
+::ng-deep ion-header:after {
+    display: none;
+}
+ion-toolbar {
+    --background:#0537b2;
+}
+.top-header {
+    background: #0537b2;
+    padding: 30px 15px 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    color: #fff;
+}
+
+.top-header img {
+    width: 80px;
+}
+
+.top-inner {
+    width: calc(100% - 90px);
+    display: inline-block;
+    padding-left: 30px;
+    vertical-align: top;
+}
+
+.top-inner h1 {
+    margin: 0;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.top-inner h1 span {
+    display: inline-block;
+    font-size: 18px;
+    vertical-align: top;
+    font-weight: normal;
+}
+.form {
+    margin: 40px 0;
+    padding: 0 15px;
+}
+
+.form span {
+    font-size: 12px;
+    padding-left: 10px;
+    color: #0537b2;
+}
+
+.form-control {
+    background: #e7eeff;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.form-control .rp {width: 50px;display: inline-block;text-align: center;line-height: 35px;font-size: 16px;border-right: solid 1px #0537b2;}
+
+.form-control input {
+    margin-left: 10px;
+    background: transparent;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+ion-footer:before {
+    display: none;
+}
+
+ion-footer button {
+    margin: 20px 0;
+    width: 100%;
+    line-height: 45px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 20px;
+    background: #0adb56;
+}
+
+ion-footer {
+    padding: 0 20px;
+}

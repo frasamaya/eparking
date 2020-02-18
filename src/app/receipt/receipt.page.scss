@@ -1,0 +1,90 @@
+::ng-deep ion-label {
+    font-size: 11px;
+}
+::ng-deep ion-header ion-title {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    margin-left: -48px;
+    pointer-events: none;
+}
+
+ion-header{
+	::ng-deep span.button-inner {
+	    color: #fff;
+	}
+}
+::ng-deep ion-header:after {
+    display: none;
+}
+ion-toolbar,ion-content {
+    --background:#0537b2;
+}
+.tikcet {
+    background: #fff;
+    padding: 20px;
+}
+
+.tikcet h3 {
+    margin: 0;
+    text-align: center;
+}
+
+.tikcet p {
+    margin: 0;
+    text-align: center;
+    font-size: 12px;
+    margin-bottom: 30px;
+}
+
+table {
+    width: 100%;
+    font-weight: 300;
+    font-size: 12px;
+}
+
+table tr td:last-child {
+    text-align: right;
+}
+
+table td {
+    padding: 5px;
+}
+
+tr.end td {
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.parking-title {
+    text-align: center;
+    border-top: double #888;
+    border-bottom: double #888;
+    text-transform: uppercase;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.footer {
+    margin-top: 30px;
+    border-top: dotted 2px;
+    padding-top: 20px;
+    text-align: center;
+    color: #555;
+}
+
+.footer img {
+    display: block;
+    width: 100px;
+    margin: 0 auto;
+}
+ion-content button {
+    width: 100%;
+    line-height: 45px;
+    margin-top: 30px;
+    border-radius: 20px;
+    font-size: 16px;
+    color: #fff;
+    background: #0adb56;
+}

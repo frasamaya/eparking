@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Verifikasi</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+	<img src="assets/otp.png">
+	<h3>Kode Verifikasi</h3>
+	<p>Masukkan kode verifikasi yang dikirim ke nomor +{{phone}}</p>
+	<input type="number" name="otp" [(ngModel)]="otp">
+	<button (click)="verify(otp)"><ion-spinner name="crescent" *ngIf="loading"></ion-spinner><span *ngIf="!loading">Kirim</span></button>
+</ion-content>

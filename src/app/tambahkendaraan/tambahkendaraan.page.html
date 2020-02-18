@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar>
+  	<ion-buttons slot="start">
+      <ion-back-button  defaultHref="/tabs/tab1"></ion-back-button>
+    </ion-buttons>
+    <ion-title *ngIf="!edit">Tambah kendaraan</ion-title>
+    <ion-title *ngIf="edit">Edit kendaraan</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+	<ion-list lines="none" radio-group>
+	  <ion-radio-group name="kendaraan" [(ngModel)]="kendaraan.jenis" (ionChange)="milesKm()" #radioGroup>
+	    <ion-list-header>
+	      <ion-label>Jenis Kendaraan</ion-label>
+	    </ion-list-header>
+	    <ion-item>
+	      <ion-label>
+	      	<img src="assets/car.png">
+	      	<span>Mobil</span>
+	  	  </ion-label>
+	      <ion-radio slot="end" name="kendaraan" value="0"></ion-radio>
+	    </ion-item>
+	    <ion-item>
+	      <ion-label>
+	      	<img src="assets/motor.png">
+	      	<span>Motor</span>
+	  	  </ion-label>
+	      <ion-radio slot="end" name="kendaraan" value="1"></ion-radio>
+	    </ion-item>
+	    <ion-item>
+	      <ion-label>
+	      	<img src="assets/bike.png">
+	      	<span>Sepeda</span>
+	  	  </ion-label>
+	      <ion-radio slot="end" name="kendaraan" value="2"></ion-radio>
+	    </ion-item>
+	    <ion-item>
+	      <ion-label>
+	      	<img src="assets/becak.png">
+	      	<span>Lainnya</span>
+	  	  </ion-label>
+	      <ion-radio slot="end" name="kendaraan" value="3"></ion-radio>
+	    </ion-item>
+	  </ion-radio-group>
+	</ion-list>
+	<ion-list lines="none">
+	  <ion-item>
+	    <ion-label position="stacked">Merk Kendaraan</ion-label>
+	    <l-select2 [(ngModel)]="kendaraan.merk" [data]="merk" (valueChange)="merkChange($event)"></l-select2>
+	  </ion-item>
+	  <ion-item>
+	    <ion-label position="stacked">Model Kendaraan</ion-label>
+	    <l-select2 [(ngModel)]="kendaraan.model" [data]="model"></l-select2>
+	  </ion-item>
+
+	  <ion-item>
+	    <ion-label position="stacked">Tahun Kendaraan</ion-label>
+	    <l-select2 [(ngModel)]="kendaraan.tahun" [data]="year"></l-select2>
+	  </ion-item>
+
+	  <ion-item>
+	    <ion-label position="stacked">Nomor Kendaraan</ion-label>
+	    <ion-input [(ngModel)]="kendaraan.plat" ></ion-input>
+	  </ion-item>
+	</ion-list>
+	<button (click)="save()"><ion-spinner name="crescent" *ngIf="loading"></ion-spinner><span *ngIf="!loading">Kirim</span></button>
+</ion-content>

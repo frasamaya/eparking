@@ -1,0 +1,12 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Parkir Masuk</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+	<ion-spinner name="crescent" *ngIf="loading"></ion-spinner>
+	<div class="done" *ngIf="done"><ion-icon name="checkmark-circle-outline"></ion-icon></div>
+	<p *ngIf="done">Scan parkir masuk berhasil</p>
+	<button (click)="home()" *ngIf="done">Kembali ke Home</button>
+</ion-content>

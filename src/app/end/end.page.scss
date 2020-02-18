@@ -1,0 +1,55 @@
+::ng-deep ion-label {
+    font-size: 11px;
+}
+::ng-deep ion-header ion-title {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: #222;
+    pointer-events: none;
+}
+
+ion-header{
+	::ng-deep span.button-inner {
+	    color: #0537b2;
+	}
+}
+::ng-deep ion-header:after {
+    display: none;
+}
+ion-content {
+    text-align: center;
+}
+
+.nominal {
+    border: solid 1px #0537b2;
+    background: rgba(5, 55, 178, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.rek {
+    background: rgba(10, 219, 86, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.rek h2 {
+    margin: 0;
+}
+
+.rek p {
+    margin: 0;
+}
+ion-content button {
+    background: rgb(10, 219, 86);
+    color: #fff;
+    margin-top: 40px;
+    line-height: 50px;
+    width: 100%;
+    font-size: 16px;
+    border-radius: 30px;
+    box-shadow: 0 0 10px 0 #0adb56;
+}

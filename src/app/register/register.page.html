@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+  	<ion-buttons slot="start">
+      <ion-back-button  defaultHref="/tabs/tab1"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+	<div class="avatar" (click)="presentActionSheet('avatar')">
+		<div class="overlay">
+			<ion-icon name="camera"></ion-icon>
+		</div>
+		<img src="{{user.avatarp}}" *ngIf="user.avatarp">
+	</div>
+	<form (ngSubmit)="presentAlertConfirm()">
+		<ion-list lines="none">
+		  <ion-item>
+		    <ion-label position="stacked">Nama</ion-label>
+		    <ion-input name="nama" [(ngModel)]="user.nama"></ion-input>
+		  </ion-item>
+		  <ion-item>
+		    <ion-label position="stacked">Nomor Telp.</ion-label>
+		    <ion-input type="number" name="phone" [(ngModel)]="user.phone"></ion-input>
+		  </ion-item>
+		  <ion-item>
+		    <ion-label position="stacked">Email</ion-label>
+		    <ion-input type="email" name="email" [(ngModel)]="user.email"></ion-input>
+		  </ion-item>
+		  <ion-item>
+		    <ion-label position="stacked">Password</ion-label>
+		    <ion-input type="password" name="password" [(ngModel)]="user.password"></ion-input>
+		  </ion-item>
+		  <ion-item>
+		    <ion-label position="stacked">Ulangi Password</ion-label>
+		    <ion-input type="password" name="repassword" [(ngModel)]="user.repassword"></ion-input>
+		  </ion-item>
+		</ion-list>
+		<button><ion-spinner name="crescent" *ngIf="loading"></ion-spinner><span *ngIf="!loading">Kirim</span></button>
+	</form>
+</ion-content>

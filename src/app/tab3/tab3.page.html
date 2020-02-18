@@ -1,0 +1,156 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Profil
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div *ngIf="isLogin">
+	<div class="profile">
+		<div class="avatar">
+			<img src="{{ user.avatar }}" onerror="this.src='https://img.pngio.com/no-avatar-png-transparent-png-download-for-free-3856300-trzcacak-png-avatar-920_954.png';">
+		</div>
+		<div class="sayhi">
+          <h2>{{user.nama}}</h2>
+          <span>+62{{user.phone}}</span>
+        </div>
+        <span slot="end" class="edit" (click)="profile()">Edit</span>
+	</div>
+	<ion-list lines="none" class="status">
+      <ion-list-header>
+        <ion-label>kendaraan saya</ion-label>
+      </ion-list-header>
+      <div *ngIf="!data  && loading">
+        <ion-list>
+          <ion-item>
+            <ion-thumbnail slot="start">
+              <ion-skeleton-text animated></ion-skeleton-text>
+            </ion-thumbnail>
+            <ion-label>
+              <h3>
+                <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+              </h3>
+              <p>
+                <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+              </p>
+              <p>
+                <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+              </p>
+            </ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-thumbnail slot="start">
+              <ion-skeleton-text animated></ion-skeleton-text>
+            </ion-thumbnail>
+            <ion-label>
+              <h3>
+                <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+              </h3>
+              <p>
+                <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+              </p>
+              <p>
+                <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+              </p>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </div>
+      <ion-item *ngFor="let item of data">
+        <ion-thumbnail slot="start">
+          <img src="assets/maps.png">
+        </ion-thumbnail>
+        <ion-label>
+          <div class="meta"><span>{{item.jenis}}</span></div>
+          <h2>{{item.merk}} {{item.model}}</h2>
+          <p>{{item.plat}}</p>
+        </ion-label>
+        <span slot="end" class="delete" (click)="presentAlertConfirm(item)"><ion-icon name="ios-trash"></ion-icon></span>
+        <span slot="end" class="edit" (click)="editKendaraan(item)">Edit</span>
+      </ion-item>
+      <div class="button" (click)="add()"><ion-icon name="add"></ion-icon> Tambah kendaraan</div>
+    </ion-list>
+	 <ion-list lines="none" class="status">
+      <ion-list-header>
+        <ion-label>riwayat parkir</ion-label>
+      </ion-list-header>
+      <div *ngIf="!history && hloading">
+        <ion-list>
+          <ion-item>
+            <ion-thumbnail slot="start">
+              <ion-skeleton-text animated></ion-skeleton-text>
+            </ion-thumbnail>
+            <ion-label>
+              <h3>
+                <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+              </h3>
+              <p>
+                <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+              </p>
+              <p>
+                <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+              </p>
+            </ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-thumbnail slot="start">
+              <ion-skeleton-text animated></ion-skeleton-text>
+            </ion-thumbnail>
+            <ion-label>
+              <h3>
+                <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+              </h3>
+              <p>
+                <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+              </p>
+              <p>
+                <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+              </p>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </div>
+      <ion-item  *ngFor="let item of history | slice:0:3; let i=index" (click)="out(item)">
+        <ion-thumbnail slot="start">
+          <img src="assets/maps.png">
+        </ion-thumbnail>
+        <ion-label>
+          <div class="meta"><span>{{item.kendaraan.jenis}}</span> <div class="dotted"></div> <div *ngIf="item.keluar" style="display: initial;">Selesai</div><div *ngIf="!item.keluar" style="display: initial;">Parkir</div></div>
+          <h2>{{item.kendaraan.merk}} {{item.kendaraan.model}}</h2>
+          <p>{{item.kendaraan.plat}} <span><div class="dotted"></div>{{item.time}}</span></p>
+        </ion-label>
+      </ion-item>
+      <div class="button" *ngIf="history" (click)="riwayat()">Lihat riwayat parkir <ion-icon name="ios-arrow-round-forward"></ion-icon></div>
+    </ion-list>
+    <ion-list lines="none">
+      <div *ngIf="!halaman">
+        <ion-list>
+          <ion-item>
+            <ion-label>
+              <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+            </ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>
+              <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </div>
+      <ion-item  *ngFor="let item of halaman" (click)="single(item)">
+        <ion-label>{{item.judul}} <ion-icon name="ios-arrow-forward"></ion-icon></ion-label>
+      </ion-item>
+      <ion-item class="logout" (click)="logout()">
+        <ion-label>Logout <ion-icon name="ios-log-out"></ion-icon></ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+  <div class="notlogin" *ngIf="!isLogin">
+      <img src="assets/empty.png">
+      <h3>Anda tidak login</h3>
+      <p>Silahkan login untuk mengakses halaman ini</p>
+      <button (click)="login()">Login</button>
+    </div>
+</ion-content>

@@ -1,0 +1,153 @@
+ion-toolbar {
+    padding: 0 20px;
+}
+
+ion-toolbar img {
+    width: 60px;
+}
+
+ion-content {
+}
+ion-item.empty {
+    text-align: center;
+    --background: rgba(244, 67, 54, 0.2);
+    border-radius: 20px;
+    margin: 0 15px;
+}
+.profile-header > div {
+    width: 50%;
+    display: inline-block;
+}
+
+.profile-header .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    overflow: hidden;
+    border: solid 2px #0537b2;
+    display: inline-block;
+}
+
+.profile-header .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sayhi {
+    display: inline-block;
+    width: 70%;
+    padding-left: 14px;
+    vertical-align: top;
+}
+
+.sayhi h2 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.sayhi span {
+    font-size: 12px;
+}
+
+.profile-header h1 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.profile-header .right {
+    text-align: right;
+}
+
+.profile-header .right span {
+    font-size: 14px;
+    color: #0537b2;
+    display: inline-block;
+    vertical-align: top;
+    padding: -r;
+}
+
+.profile-header .right h1 span {
+    color: #888;
+    padding-right: 6px;
+}
+
+.profile-header {
+    padding: 0 0 20px 0;
+}
+.saldo-bar {
+    background: #0537b2;
+    border-radius: 20px;
+    padding: 30px 0;
+    box-shadow: 0 5px 9px 0 rgba(5, 55, 178, 0.3);
+}
+
+.saldo {
+    width: 33%;
+    display: inline-block;
+    text-align: center;
+    font-size: 14px;
+}
+
+.saldo span {
+    display: block;
+    color: #fff;
+    margin-top: 10px;
+}
+.mitra {
+    margin: 0 -10px;
+}
+.mitra-avatar {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    border-radius: 50px;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.mitra-avatar .pin {
+    width: 15px;
+    height: auto;
+}
+
+.mitra-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mitra-item {
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    margin: 0 15px;
+}
+
+.mitra-item p {
+    font-size: 12px;
+}
+.mitra-box {
+    display: flex;
+    overflow: auto;
+    margin-top: 30px;
+}
+
+img.pin {
+    position: absolute;
+    z-index: 9;
+    right: 10px;
+}
+.car-box {
+    display: flex;
+    overflow: auto;
+}
+
+.car-box ion-card img {width: 300px;}
+
+.car-box ion-card {
+    display: inline-block;
+    flex: none;
+    width: 300px;
+}

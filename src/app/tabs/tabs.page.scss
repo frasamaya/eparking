@@ -1,0 +1,32 @@
+ion-tab-button ion-icon {
+    background: #eee;
+    font-size: 16px;
+    padding: 5px;
+    border-radius: 6px;
+}
+
+ion-tab-button.tab-selected ion-icon {
+    background: #0537b2;
+    color: #fff;
+}
+
+ion-tab-bar {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: 0 0 10px 0 #eee;
+    border: none;
+}
+::ng-deep ion-label {
+    font-size: 11px;
+}
+::ng-deep ion-header ion-title {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: #222;
+}
+
+
+::ng-deep ion-header:after {
+    display: none;
+}
